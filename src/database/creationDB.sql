@@ -1,10 +1,12 @@
-CREATE DATABASE IF NOT EXISTS Maquettes_avion;
+DROP DATABASE IF EXISTS Maquettes_avion;
 
-USE DATABASE Maquettes_avion;
+CREATE DATABASE Maquettes_avion;
+
+USE Maquettes_avion;
 
 CREATE TABLE `Produit` (
   `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `nom` VARCHAR(45) NOT NULL,
+  `nom` VARCHAR(100) NOT NULL,
   `prix_unitaire` FLOAT NOT NULL,
   `quantite_stock` INT NOT NULL,
   `categorie_id` INT NOT NULL,
@@ -13,30 +15,30 @@ CREATE TABLE `Produit` (
 
 CREATE TABLE `Categories` (
   `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `nom` VARCHAR(45) NOT NULL
+  `nom` VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE `Fournisseurs` (
   `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `nom` VARCHAR(45) NOT NULL,
-  `prenom` VARCHAR(45) NOT NULL,
+  `nom` VARCHAR(100) NOT NULL,
+  `prenom` VARCHAR(100) NOT NULL,
   `adresse` VARCHAR(100) NOT NULL,
-  `tel` INT NOT NULL
+  `tel` VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE `Client` (
   `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `nom` VARCHAR(45) NOT NULL,
-  `prenom` VARCHAR(45) NOT NULL,
+  `nom` VARCHAR(100) NOT NULL,
+  `prenom` VARCHAR(100) NOT NULL,
   `adresse` VARCHAR(100) NOT NULL,
-  `tel` INT NOT NULL
+  `tel` VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE `Commandes` (
   `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `client_id` INT NOT NULL,
   `date_commande` DATETIME NOT NULL,
-  `statut` ENUM(En cours,Livrée) NOT NULL
+  `statut` ENUM("En cours", "Livrée") NOT NULL
 );
 
 CREATE TABLE `Lignes_Commande` (

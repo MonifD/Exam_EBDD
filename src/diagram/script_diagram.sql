@@ -9,23 +9,23 @@ Table Produit {
 
 Table Categories {
   id INT [pk, not null, increment]
-  nom VARCHAR(45) [not null]
+  nom VARCHAR(100) [not null]
 }
 
 Table Fournisseurs {
   id INT [pk, not null, increment]
-  nom VARCHAR(45) [not null]
-  prenom VARCHAR(45) [not null]
+  nom VARCHAR(100) [not null]
+  prenom VARCHAR(100) [not null]
   adresse VARCHAR(100) [not null]
-  tel INT [not null]
+  tel VARCHAR(100) [not null]
 }
 
 Table Client {
   id INT [pk, not null, increment]
-  nom VARCHAR(45) [not null]
-  prenom VARCHAR(45) [not null]
+  nom VARCHAR(100) [not null]
+  prenom VARCHAR(100) [not null]
   adresse VARCHAR(100) [not null]
-  tel INT [not null]
+  tel VARCHAR(100) [not null]
 }
 
 Table Commandes {
