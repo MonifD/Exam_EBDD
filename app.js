@@ -7,8 +7,8 @@ app.use(express.json());
 
 const dbConfig = {
     host: "localhost",
-    user: "momo",
-    password: "Momo@190703",
+    user: "root",
+    password: "root",
     database: "Maquettes_avion",
     multipleStatements: true
 };
