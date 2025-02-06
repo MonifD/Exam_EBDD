@@ -1,4 +1,3 @@
-// src/controllers/ligneCommandeController.js
 const { Lignes_Commande } = require('../models');
 
 // Récupérer toutes les lignes de commande

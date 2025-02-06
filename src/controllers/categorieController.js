@@ -1,4 +1,3 @@
-// src/controllers/categorieController.js
 const { Categories } = require('../models');
 
 // Récupérer toutes les catégories

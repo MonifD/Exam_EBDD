@@ -1,4 +1,3 @@
-// src/controllers/fournisseurController.js
 const { Fournisseurs } = require('../models');
 
 // Récupérer tous les fournisseurs
