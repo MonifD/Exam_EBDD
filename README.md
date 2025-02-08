@@ -161,18 +161,31 @@ Ce fichier est le point d'entrée de l'application. Il configure le serveur Expr
 ---
 ## Historique des Versions
 
-### V1 - Version Initiale
-- 🚀 Initialisation du projet
-- 🛠️ Ajout des modèles Sequelize
-- 🏗️ Création des routes API
+## 🔹 V1 - Première Version
 
-### 🔍 Audit & Problèmes Détectés
-- ⚠️ Requêtes SQL directes non sécurisées
-- 🛑 Manque de validation des données
-- ❌ Code monolithique et peu modulaire
+### 🚀 Initialisation du Projet
+- **🆕 30/01/2025** - Création du schéma SQL et des fichiers initiaux [`f98f82a`](https://github.com/user/repo/commit/f98f82a)
+- **📝 30/01/2025** - Ajout du script de création de la base de données [`f98f82a`](https://github.com/user/repo/commit/f98f82a)
+- **📊 30/01/2025** - Ajout du script de diagramme et de l’image du schéma [`b242135`](https://github.com/user/repo/commit/b242135)
 
-### V2 - Optimisation et Sécurisation
-- ✅ Utilisation de Sequelize ORM
-- 🔄 Refactoring du code en modules (routes, contrôleurs, modèles)
-- 🛡️ Validation des entrées utilisateurs
-- 📦 Ajout de la gestion avancée des stocks et filtres
+### 🔧 Développement des Fonctionnalités
+- **📦 31/01/2025** - Ajout des scripts SQL pour insérer des données [`f30b07a`](https://github.com/user/repo/commit/f30b07a)
+- **⚙️ 03/02/2025** - Ajout des requêtes CRUD dans `app.js` [`9b36fa6`](https://github.com/user/repo/commit/9b36fa6)
+- **🔧 03/02/2025** - Modification de `app.js` pour retirer l’accès direct à la BDD [`6c29f07`](https://github.com/user/repo/commit/6c29f07)
+
+### 📖 Documentation
+- **📜 03/02/2025** - Ajout du fichier `README.md` [`a7d0127`](https://github.com/user/repo/commit/a7d0127)
+
+---
+
+## 🔹 V2 - Optimisation et Améliorations
+
+### 🛡 Sécurisation et Refactorisation
+- **🛠 06/02/2025** - Sécurisation et amélioration de `V1` [`735880c`](https://github.com/user/repo/commit/735880c)
+- **🔀 06/02/2025** - Ajout des fichiers `routes` et `controllers` [`38ee604`](https://github.com/user/repo/commit/38ee604)
+- **⚡️ 06/02/2025** - Ajout et modification des fonctions des contrôleurs et routeurs [`b4a287c`](https://github.com/user/repo/commit/b4a287c)
+
+### 📖 Finalisation et Documentation
+- **📂 08/02/2025** - Ajout du fichier `Synthese_DOURI_Mohamad.pdf` (résumé du projet) [`022b36c`](https://github.com/user/repo/commit/022b36c)
+
+
