@@ -87,6 +87,34 @@ Ce projet est une application Node.js permettant de gérer le stock, les command
 
 ---
 
+## Structure du Dépôt Git
+
+Le dépôt Git est organisé en plusieurs branches, chacune représentant différentes versions du projet.
+
+### Branches
+
+- **`main`** : Contient la version finale du projet, **V2**, avec toutes les améliorations, la sécurisation et les optimisations par rapport à la version initiale.
+- **`V1`** : Contient la version initiale du projet, avec les erreurs identifiées et corrigées dans la branche **V2**. Cette version représente la première implémentation du système de gestion de stock, sans les améliorations ni les optimisations apportées dans la **V2**.
+- **`dev`** : Branche de développement utilisée pour les futures fonctionnalités ou modifications avant de les intégrer à la version stable.
+
+### Naviguer entre les branches
+
+Tu peux naviguer entre les branches **V1** et **V2** pour voir les différences entre la version initiale du projet (V1) et la version améliorée (V2).
+
+- **V1** : Version avec erreurs et premières implémentations.
+- **V2** : Version stable avec corrections, optimisations, et sécurisation du code.
+
+Pour naviguer sur ces branches, utilise les commandes suivantes dans ton terminal :
+
+- Pour passer à la branche **V1** :
+   ```bash
+   git checkout V1
+   ```
+- Pour passer à la branche **V2** :
+   ```bash
+   git checkout V2
+   ```
+---
 ## Structure du Projet
 
 - **`app.js`** : Point d'entrée de l'application. Contient la **configuration** du serveur et les routes.
@@ -164,28 +192,28 @@ Ce fichier est le point d'entrée de l'application. Il configure le serveur Expr
 ## 🔹 V1 - Première Version
 
 ### 🚀 Initialisation du Projet
-- **🆕 30/01/2025** - Création du schéma SQL et des fichiers initiaux [`f98f82a`](https://github.com/user/repo/commit/f98f82a)
-- **📝 30/01/2025** - Ajout du script de création de la base de données [`f98f82a`](https://github.com/user/repo/commit/f98f82a)
-- **📊 30/01/2025** - Ajout du script de diagramme et de l’image du schéma [`b242135`](https://github.com/user/repo/commit/b242135)
+- **🆕 30/01/2025** - Création du schéma SQL et des fichiers initiaux [`f98f82a`](https://github.com/MonifD/Exam_EBDD/commit/f98f82a25d5c7b6b1faac7690f527c33739fbfdd)
+- **📝 30/01/2025** - Ajout du script de création de la base de données [`f98f82a`](https://github.com/MonifD/Exam_EBDD/commit/f98f82a25d5c7b6b1faac7690f527c33739fbfdd)
+- **📊 30/01/2025** - Ajout du script de diagramme et de l’image du schéma [`b242135`](https://github.com/MonifD/Exam_EBDD/commit/b24213506d6f2a9a6cbdbb24e7cb8c06f9e3c002)
 
 ### 🔧 Développement des Fonctionnalités
-- **📦 31/01/2025** - Ajout des scripts SQL pour insérer des données [`f30b07a`](https://github.com/user/repo/commit/f30b07a)
-- **⚙️ 03/02/2025** - Ajout des requêtes CRUD dans `app.js` [`9b36fa6`](https://github.com/user/repo/commit/9b36fa6)
-- **🔧 03/02/2025** - Modification de `app.js` pour retirer l’accès direct à la BDD [`6c29f07`](https://github.com/user/repo/commit/6c29f07)
+- **📦 31/01/2025** - Ajout des scripts SQL pour insérer des données [`f30b07a`](https://github.com/MonifD/Exam_EBDD/commit/f30b07a8fade51170f96d30dacd51e7473c2d1f8)
+- **⚙️ 03/02/2025** - Ajout des requêtes CRUD dans `app.js` [`9b36fa6`](https://github.com/MonifD/Exam_EBDD/commit/9b36fa6fc9c9a4564220434c28df1dff9ba10958)
+- **🔧 03/02/2025** - Modification de `app.js` pour retirer l’accès direct à la BDD [`6c29f07`](https://github.com/MonifD/Exam_EBDD/commit/6c29f0740d9834def67e0888ed588753388aebb6)
 
 ### 📖 Documentation
-- **📜 03/02/2025** - Ajout du fichier `README.md` [`a7d0127`](https://github.com/user/repo/commit/a7d0127)
+- **📜 03/02/2025** - Ajout du fichier `README.md` [`a7d0127`](https://github.com/MonifD/Exam_EBDD/commit/a7d01279a0c8da1b26e147f082986967690dabde)
 
 ---
 
 ## 🔹 V2 - Optimisation et Améliorations
 
 ### 🛡 Sécurisation et Refactorisation
-- **🛠 06/02/2025** - Sécurisation et amélioration de `V1` [`735880c`](https://github.com/user/repo/commit/735880c)
-- **🔀 06/02/2025** - Ajout des fichiers `routes` et `controllers` [`38ee604`](https://github.com/user/repo/commit/38ee604)
-- **⚡️ 06/02/2025** - Ajout et modification des fonctions des contrôleurs et routeurs [`b4a287c`](https://github.com/user/repo/commit/b4a287c)
+- **🛠 06/02/2025** - Sécurisation et amélioration de `V1` [`735880c`](https://github.com/MonifD/Exam_EBDD/commit/735880c98480c391efe2366ca78836e41fcda681)
+- **🔀 06/02/2025** - Ajout des fichiers `routes` et `controllers` [`38ee604`](https://github.com/MonifD/Exam_EBDD/commit/38ee60449af61688a576d90e544d6f18266f8311)
+- **⚡️ 06/02/2025** - Ajout et modification des fonctions des contrôleurs et routeurs [`b4a287c`](https://github.com/MonifD/Exam_EBDD/commit/b4a287c988499990ba40f5b7faf367669b533a63)
 
 ### 📖 Finalisation et Documentation
-- **📂 08/02/2025** - Ajout du fichier `Synthese_DOURI_Mohamad.pdf` (résumé du projet) [`022b36c`](https://github.com/user/repo/commit/022b36c)
+- **📂 08/02/2025** - Ajout du fichier `Synthese_DOURI_Mohamad.pdf` (résumé du projet) [`022b36c`](https://github.com/MonifD/Exam_EBDD/commit/022b36c9e661aa871ed09ad9abd95a08b3118f23)
 
 
