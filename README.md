@@ -1,7 +1,6 @@
+# Système de Gestion de Stock pour un Petit Commerce
 
-# Système de Gestion de Stock pour un Petit Commerce (V1)
-
-Ce projet est une application Node.js qui permet de gérer le stock, les commandes, les clients et les fournisseurs pour un petit commerce spécialisé dans la vente de maquettes d'avion en papier. Il s'agit d'une version initiale (V1) qui sert de prototype (POC) pour démontrer les fonctionnalités de base.
+Ce projet est une application Node.js permettant de gérer le stock, les commandes, les clients et les fournisseurs pour un petit commerce spécialisé dans la vente de maquettes d'avion en papier. Il s'agit d'une version initiale qui servant de prototype (POC)
 
 ---
 
@@ -43,17 +42,6 @@ Ce projet est une application Node.js qui permet de gérer le stock, les command
 
 ---
 
-## Structure du Projet
-
-- **`app.js`** : Point d'entrée de l'application. Contient la configuration du serveur et les routes.
-- **`src/database/creationDB.sql`** : Script SQL pour créer la base de données et les tables.
-- **`src/database/insertData.sql`** : Script SQL pour insérer des données de test.
-- **`src/diagram/diagram.png`** : Photo de la BDD modéliser sous forme de table.
-- **`src/diagram/script_diagral.sql`** : Script qui a generer les tables grance au site dbdiagram.io.
-- **`README.md`** : Documentation du projet.
-
----
-
 ## Comment Lancer le Projet
 
 ### Prérequis
@@ -65,8 +53,8 @@ Ce projet est une application Node.js qui permet de gérer le stock, les command
 
 1. **Cloner le dépôt** :
    ```bash
-   git clone https://github.com/votre-utilisateur/votre-projet.git
-   cd votre-projet
+   git clone https://github.com/MonifD/Exam_EBDD
+   cd Exam_EBDD
    ```
 
 2. **Installer les dépendances** : 
@@ -77,19 +65,17 @@ Ce projet est une application Node.js qui permet de gérer le stock, les command
 3. **Configurer la base de données** :
    Assurez-vous que MySQL est installé et en cours d'exécution.
 
-   Modifiez les informations de connexion dans `app.js` si nécessaire :
-   ```javascript
-   const dbConfig = {
-     host: "localhost",
-     user: "root",
-     password: "root",
-     database: "Maquettes_avion",
-     multipleStatements: true
-   };
+   Créez un fichier `.env` et insérez les informations contenues dans `.env.example` :
+   ```ini
+   HOST="localhost"
+   USER="root"  # Remplacez par votre nom d'utilisateur MySQL
+   PASSWORD="root"  # Remplacez par votre mot de passe MySQL
+   DATABASE="Maquettes_avion"  # Modifiez si nécessaire
+   PORT=3306
    ```
 
 4. **Initialiser la base de données** :
-   Exécutez le script SQL pour créer la base de données et insérer les données de test :
+   Exécutez le fichier `app.js` pour créer la base de données et insérer les données de test :
    ```bash
    node app.js
    ```
@@ -99,13 +85,34 @@ Ce projet est une application Node.js qui permet de gérer le stock, les command
 
    Vous pouvez accéder à l'API à l'adresse suivante : [http://localhost:3000](http://localhost:3000).
 
+---
+
+## Structure du Projet
+
+- **`app.js`** : Point d'entrée de l'application. Contient la **configuration** du serveur et les routes.
+- **`src/config/config.js`** : Configuration **SEQUELIZE**, utile pour la base de donnée.
+- **`src/routes`** : Contient les **endpoints** de l'api.
+- **`src/controllers`** : Contient les **functions** qui permet le bon fonctionnement de l'api.
+- **`src/models`** : Contient les **models** qui permet la création des tables et l'intialisation de la base de donnée.
+- **`src/database/creationDB.sql`** : Script SQL pour créer la base de données et les tables.
+- **`src/database/insertData.sql`** : Script SQL pour insérer des données de test.
+- **`src/diagram/diagram.png`** : Schéma de la base de données sous forme d'image.
+- **`src/diagram/script_diagral.sql`** : Script SQL généré via le site dbdiagram.io.
+- **`README.md`** : Documentation du projet.
+
+---
+
 ### Routes de l'API
 
 #### Produits
-- `GET /produits` : Récupérer tous les produits.
-- `POST /produits` : Créer un nouveau produit.
-- `PUT /produits/:id` : Mettre à jour un produit existant.
-- `DELETE /produits/:id` : Supprimer un produit.
+- `GET /produits` : Récupère tous les produits. 
+- `GET /produits/:id/commandes` : Récupère les commandes contenant un 
+produit. 
+- `GET /produits/most-sold` : Récupère les produits les plus vendus. 
+- `GET /produits/stock-faible` : Récupère les produits en stock faible. 
+- `POST /produits` : Crée un nouveau produit. 
+- `PUT /produits/:id` : Met à jour un produit. 
+- `DELETE /produits/:id` : Supprime un produit.
 
 #### Catégories
 - `GET /categories` : Récupérer toutes les catégories.
@@ -120,22 +127,25 @@ Ce projet est une application Node.js qui permet de gérer le stock, les command
 - `DELETE /fournisseurs/:id` : Supprimer un fournisseur.
 
 #### Clients
-- `GET /clients` : Récupérer tous les clients.
-- `POST /clients` : Créer un nouveau client.
-- `PUT /clients/:id` : Mettre à jour un client existant.
-- `DELETE /clients/:id` : Supprimer un client.
+- `GET /clients` : Récupère tous les clients. 
+- `GET /clients/:id/commandes` : Récupère les commandes d'un client. 
+- `POST /clients` : Crée un nouveau client. 
+- `PUT /clients/:id` : Met à jour un client. 
+- `DELETE /clients/:id` : Supprime un client.
 
 #### Commandes
-- `GET /commandes` : Récupérer toutes les commandes.
-- `POST /commandes` : Créer une nouvelle commande.
-- `PUT /commandes/:id` : Mettre à jour une commande existante.
-- `DELETE /commandes/:id` : Supprimer une commande.
+- `GET /commandes `: Récupère toutes les commandes. 
+- `GET /commandes/date` : Récupère les commandes par période. 
+- `GET /commandes/search` : Recherche multi-critères des commandes. 
+- `POST /commandes` : Crée une nouvelle commande. 
+- `PUT /commandes/:id` : Met à jour une commande. 
+- `DELETE /commandes/:id` : Supprime une commande. 
 
 #### Lignes de Commande
-- `GET /lignes_commande` : Récupérer toutes les lignes de commande.
-- `POST /lignes_commande` : Créer une nouvelle ligne de commande.
-- `PUT /lignes_commande/:id` : Mettre à jour une ligne de commande existante.
-- `DELETE /lignes_commande/:id` : Supprimer une ligne de commande.
+- `GET /lignes_commande` : Récupère toutes les lignes de commande. 
+- `POST /lignes_commande` : Crée une nouvelle ligne de commande. 
+- `PUT /lignes_commande/:id` : Met à jour une ligne de commande. 
+- `DELETE /lignes_commande/:id` : Supprime une ligne de commande.
 
 ---
 
@@ -144,12 +154,25 @@ Ce projet est une application Node.js qui permet de gérer le stock, les command
 ### `app.js`
 Ce fichier est le point d'entrée de l'application. Il configure le serveur Express et définit les routes pour les opérations CRUD sur les différentes tables de la base de données.
 
-- **Connexion à MySQL** : La connexion à la base de données MySQL est configurée dans `dbConfig`.
-- **Initialisation de la base de données** : La fonction `initDB` exécute les scripts SQL pour créer la base de données et insérer les données de test.
-- **Routes CRUD** : Chaque route correspond à une opération CRUD sur une table spécifique.
+- **Connexion à MySQL** : La connexion à la base de données MySQL et la création de la base de données sont configurées dans la fonction `initializeDatabase`, contenue dans le fichier `creationDB.js`.
+- **Insertion des données dans la base de données** : Le fichier `insertData.js` contient une fonction qui insère des données de test.
+- **Routes CRUD** : Chaque route correspond à un fichier distinct contenant un CRUD complet sur une table.
 
-### `src/database/creationDB.sql`
-Ce script SQL crée la base de données `Maquettes_avion` et les tables nécessaires (`Produit`, `Categories`, `Fournisseurs`, `Client`, `Commandes`, `Lignes_Commande`).
+---
+## Historique des Versions
 
-### `src/database/insertData.sql`
-Ce script SQL insère des données de test dans les tables pour permettre des tests immédiats.
+### V1 - Version Initiale
+- 🚀 Initialisation du projet
+- 🛠️ Ajout des modèles Sequelize
+- 🏗️ Création des routes API
+
+### 🔍 Audit & Problèmes Détectés
+- ⚠️ Requêtes SQL directes non sécurisées
+- 🛑 Manque de validation des données
+- ❌ Code monolithique et peu modulaire
+
+### V2 - Optimisation et Sécurisation
+- ✅ Utilisation de Sequelize ORM
+- 🔄 Refactoring du code en modules (routes, contrôleurs, modèles)
+- 🛡️ Validation des entrées utilisateurs
+- 📦 Ajout de la gestion avancée des stocks et filtres
