@@ -53,7 +53,7 @@ Ce projet est une application Node.js permettant de gérer le stock, les command
 
 1. **Cloner le dépôt** :
    ```bash
-   git clone https://github.com/MonifD/Exam_EBDD
+   git clone https://github.com/MonifD/Exam_EBDD.git
    cd Exam_EBDD
    ```
 
